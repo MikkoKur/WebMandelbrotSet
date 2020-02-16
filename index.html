@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="lib/webm-writer-0.2.4.js"></script>
+	<script src="lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/mandelbrot.js" async></script>
+</head>
+
+<canvas id="canvas">Your browser does not support the HTML5 canvas tag.</canvas>
+
+<input type="range" min="0" max="255" value="0" class="slider" id="RedMinSlider">
+R min: <span id="rMinValue"></span>
+Stripes<input type="checkbox" id="rStripes" onclick="EnableStripes('r')"><br>
+
+<input type="range" min="0" max="255" value="0" class="slider" id="GreenMinSlider">
+G min: <span id="gMinValue"></span>
+Stripes<input type="checkbox" id="gStripes" onclick="EnableStripes('g')"><br>
+
+<input type="range" min="0" max="255" value="0" class="slider" id="BlueMinSlider">
+B min: <span id="bMinValue"></span>
+Stripes<input type="checkbox" id="bStripes" onclick="EnableStripes('b')"><br>
+
+<input type="range" min="0" max="255" value="255" class="slider" id="RedMaxSlider">
+R max: <span id="rMaxValue"></span><br>
+
+<input type="range" min="0" max="255" value="255" class="slider" id="GreenMaxSlider">
+G max: <span id="gMaxValue"></span><br>
+
+<input type="range" min="0" max="255" value="255" class="slider" id="BlueMaxSlider">
+B max: <span id="bMaxValue"></span><br>
+
+<button class="button" id="zoomInButton">Zoom in</button><br>
+<button class="button" id="resetButton">Reset</button><br>
+<a href="#" class="button" id="downloadButton" download="capture.png">Download current image</a><br>
+<button class="button" id="makeVideoButton">Make video</button><br>
+
+<div class="videoOutput">
+	<video width="350" controls>
+	  <source type="video/webm">
+	  Your browser does not support HTML5 video.
+	</video>
+</div>
+
+<br>
+<p class="info">Click image with left mouse button to center view.</p><br>
+</body>
+
+</html>
